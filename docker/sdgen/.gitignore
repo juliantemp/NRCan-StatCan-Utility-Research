@@ -1,0 +1,8 @@
+# ignore everything
+*
+# except these
+!.gitignore
+!Dockerfile
+!synthcity_installer.sh
+!sdv_installer.sh
+!misc.sh

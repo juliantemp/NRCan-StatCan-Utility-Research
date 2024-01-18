@@ -1,0 +1,5 @@
+# ignore universe
+*
+# except these
+!.gitignore
+!download.py
