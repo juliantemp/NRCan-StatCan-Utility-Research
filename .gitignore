@@ -1,0 +1,8 @@
+# ignore universe
+*
+# except these
+!.gitignore
+!*.md
+!LICENSE
+!notebooks
+!data
