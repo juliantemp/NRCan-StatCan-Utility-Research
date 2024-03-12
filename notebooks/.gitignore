@@ -1,0 +1,7 @@
+# ignore universe
+*
+# except these
+!.gitignore
+!*.ipynb
+!*.py
+!PAR_model
