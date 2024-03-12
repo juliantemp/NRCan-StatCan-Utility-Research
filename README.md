@@ -21,13 +21,22 @@ Second cd into `sdgen` and run:
 
 The option `--network=host` allows to share the network between host and container, so no need to specify the ports to forward from container to host.
 
-In order to run the notebooks a running container based on `sdgen` image is needed:
+In order to run the notebooks a running container based on `sdgen` image is needed. The following command will create and run the container `sdtest`:
 
-    docker run --name sdtest --gpus all --network=host -it --mount type=bind,source={host directory},target=/home/synthcity/statcan --entrypoint bash sdgen:latest
+    docker run --name sdtest --gpus all --network=host -it --mount type=bind,source={host directory},target=/home/synthcity/utility --entrypoint bash sdgen:latest
 
 The option `--gpus all` is needed to let the container access the GPU.
-Where `{host directory}` is the local directory on the host machine meant to hold all the project code and assets. In other words, this is the shared space an in this `directory` **this repository** has to be cloned.
+Where `{host directory}` is the local directory on the host machine meant to hold all the project code and assets. In other words, this is the shared space and in this `directory` **this repository** has to be cloned:
 
+    cd utility
+    git clone https://github.com/juliantemp/NRCan-StatCan-Utility-Research.git
+
+Finally, we must download the data
+
+    cd NRCan-StatCan-Utility-Research/data
+    python3 download.py
+
+These two last steps do not need to be necessarily run inside the container, but they have to be run on a directory reachable by the container, i.e., under `{host directory}`.
 
 ## Notebooks
 The notebooks helps to understand the steps needed for building a pipeline to generate synthetic data.
