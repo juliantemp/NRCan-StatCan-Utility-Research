@@ -64,6 +64,10 @@ As output, the trained model is saved along with the synthetic data generated.
 
 Alternative postprocessing of the `real data` considering the peaks and valleys of individual time series. If you ran [the previous notebook](#2a_cpar_training.ipynb) you do not need to run this to pass to the next step, evaluation.
 
+#### `2c_cpar_training.ipynb`
+
+The peaks and valleys for each time series are kept as static features along with its timestamp. 
+
 #### `3_Evaluation.ipynb`
 
 This notebook can sample new SD using a saved model or simply load SD data generated in the last step for evaluation. It outputs a series of metrics and plots.
