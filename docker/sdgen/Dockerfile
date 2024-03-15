@@ -52,6 +52,8 @@ RUN chmod -R 777 /usr/local/lib/python3.10/dist-packages/pycox/datasets
 RUN chmod -R 777 $USER_HOME/synthcity
 RUN chown $USER:$USER -R $USER_HOME/synthcity
 
+RUN apt install graphviz
+
 WORKDIR $USER_HOME
 
 USER $USER

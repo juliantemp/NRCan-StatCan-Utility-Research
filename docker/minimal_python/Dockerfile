@@ -21,7 +21,6 @@ RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
     python3-pip-whl \
     python3-ipython \
     python3-venv \
-    graphviz \
     bzip2 \
     unzip \
     git \
